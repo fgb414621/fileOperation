@@ -16,15 +16,15 @@ public class main {
         List<EmployeeVo> dataList1 = new ArrayList<>();
         List<EmployeeVo> dataList2 = new ArrayList<>();
         List<EmployeeVo> employeeVos = ExcelUtil.readDataFromExcel(filePath, EmployeeVo.class, 1);
-        System.out.print("读取的数据行数：" + employeeVos.size());
-        int i = 1;
+        System.out.print(employeeVos.size());
+
+
         for (EmployeeVo employeeVo : employeeVos) {
-            if (i <= 50) {
+            if ((int) (Math.random()*2 + 1) == 1) {
                 dataList1.add(employeeVo);
             } else {
                 dataList2.add(employeeVo);
             }
-            i++;
             System.out.println(employeeVo);
         }
 
